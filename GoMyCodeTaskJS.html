@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<Head>
+    <title>
+        Java Script Task
+    </title>
+<Head>
+<Body>
+        <button onclick= Bold()>Bold</button>
+        <button onclick= italic()>italic</button>
+        <button onclick= Underlined()>Underlined</button>
+        <select id="id-input" class="input"  onchange="changeFont()" >
+            <option  >pick a Font</option>
+			<option class="Times-New-Roman" value="Times-New-Roman">Times New Roman</option>
+            <option class="Verdana" value="Verdana">Verdana</option>
+            <option value="Comic-Sans-MS">Comic Sans MS</option>                      
+        </select>
+        <select id = "myList" class="myList"  onchange="changeSize()" >
+			<option  >pick a Size</option>
+			<option class="50px" value = "50px"  >60</option>
+            <option class="70px" value = "70px"  >70</option>
+			<option class="80px" value = "80px"  >80</option>
+			<option class="100px" value = "100px" >100</option>
+        </select>
+		<br>
+ <div id="id-output">
+<p id="txxt">GoMyCode Styles 's Task </p>
+</div>
+
+<script>
+function changeFont() {
+    var myselect = document.getElementById("id-input");   
+    var font = myselect.options[myselect.selectedIndex].value; 
+    document.getElementById("id-output").style.fontFamily = font;   
+}
+
+function changeSize() {
+    var myselect = document.getElementById("id-input");   
+    var Size = myList.options[myList.selectedIndex].value; 
+    document.getElementById("id-output").style.fontSize = Size;   
+}
+function Bold(){
+    var stl = document.getElementById("txxt");
+    if( stl.style.fontWeight == "bolder" ) {
+        stl.style.fontWeight = "normal";
+    } else {
+        stl.style.fontWeight = "bolder";
+    }
+}
+
+
+
+function italic(){
+    var stl = document.getElementById("txxt");
+    if( stl.style.fontStyle == "italic" ) {
+        stl.style.fontStyle = "normal";
+    } else {
+        stl.style.fontStyle = "italic";
+    }
+}
+
+function Underlined(){
+    var stl = document.getElementById("txxt");
+    if( stl.style.textDecoration == "underline" ) {
+        stl.style.textDecoration = "none";
+    } else {
+        stl.style.textDecoration = "underline";
+    }
+}
+
+</script>
+
+</body>
+</html>
